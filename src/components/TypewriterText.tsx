@@ -4,7 +4,6 @@ interface TypewriterTextProps {
   text: string;
   delay?: number;
   className?: string;
-  onHover?: boolean;
   onComplete?: () => void;
 }
 
@@ -49,7 +48,6 @@ const TypewriterText: React.FC<TypewriterTextProps> = ({
   text, 
   delay = 50, 
   className = "",
-  onHover = false,
   onComplete
 }) => {
   const displayText = useTypewriter(text, delay, true, onComplete);

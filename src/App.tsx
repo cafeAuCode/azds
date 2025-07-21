@@ -8,7 +8,7 @@ import './App.css';
 
 const App: React.FC = () => {
   const techStack = ['React', 'Node', 'MongoDB', 'AWS', 'Vercel', 'Express.js', 'TypeScript'];
-  const [isHovering, setIsHovering] = useState(false);
+
   const [isMobile, setIsMobile] = useState(false);
 
   // Check if mobile on mount and resize
@@ -449,8 +449,6 @@ const App: React.FC = () => {
             <motion.a 
               href="mailto:hello@azds.ai?subject=Domain%20Gift%20%2B%20Letter%20from%20Carter%20Schilling" 
               className="cta-button primary"
-              onMouseEnter={() => setIsHovering(true)}
-              onMouseLeave={() => setIsHovering(false)}
               whileHover={{ scale: 1.01, y: -2 }}
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.2 }}
@@ -485,7 +483,6 @@ const App: React.FC = () => {
             <TypewriterText 
               text="P.S. My wife is a Colorado native and has been nudging me to move there for years. Working with a team like yours would make it an easy decision."
               delay={45}
-              onHover={isHovering}
             />
           </motion.div>
         </Panel>
