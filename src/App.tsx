@@ -151,7 +151,7 @@ const App: React.FC = () => {
             whileHover={{ scale: 1.05 }}
           >
             <motion.img 
-              src="/src/assets/azdlr.png" 
+              src="https://res.cloudinary.com/dlpkqmdvq/image/upload/v1751929161/AZDLR_LOGO_no3wt3.png" 
               alt="AZ DLR LLC" 
               className="azdlr-logo"
               whileHover={{ rotate: 5, scale: 1.1 }}
