@@ -447,7 +447,7 @@ const App: React.FC = () => {
             transition={{ duration: 0.8, delay: 1.8 }}
           >
             <motion.a 
-              href="mailto:hello@azds.ai?subject=Domain%20Gift%20%2B%20Letter%20from%20Carter%20Schilling" 
+              href="mailto:admin@azdlr.com?subject=Domain%20Gift%20%2B%20Letter%20from%20Carter%20Schilling" 
               className="cta-button primary"
               whileHover={{ scale: 1.01, y: -2 }}
               whileTap={{ scale: 0.95 }}
@@ -457,7 +457,7 @@ const App: React.FC = () => {
             </motion.a>
           </motion.div>
           
-          <motion.div 
+          {/* <motion.div 
             className="footer-links"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -472,7 +472,7 @@ const App: React.FC = () => {
             >
               See what else I've been building →
             </motion.a>
-          </motion.div>
+          </motion.div> */}
           
           <motion.div 
             className="ps-line"

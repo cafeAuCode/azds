@@ -1,1 +1,5 @@
- 
+<svg width="160" height="80" viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="160" height="80" rx="8" fill="rgba(255,255,255,0.1)"/>
+  <text x="80" y="35" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="20" font-weight="600">AZ DLR</text>
+  <text x="80" y="55" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="Inter, sans-serif" font-size="12" font-weight="400">LLC</text>
+</svg> 
