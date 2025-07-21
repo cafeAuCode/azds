@@ -1,0 +1,296 @@
+/* Panel Component Styles - Enhanced */
+.panel {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--spacing-2xl) 0;
+  position: relative;
+  transition: all var(--transition-normal);
+  overflow: hidden;
+}
+
+/* Desktop: Better vertical positioning */
+@media (min-width: 768px) {
+  .panel {
+    align-items: flex-start;
+    padding: var(--spacing-lg) 0 var(--spacing-xl) 0;
+  }
+}
+
+.panel-content {
+  max-width: 1200px;
+  width: 100%;
+  padding-left: clamp(2rem, 6vw, 8rem);
+  padding-right: clamp(2rem, 6vw, 8rem);
+  padding-top: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+  position: relative;
+  z-index: 2;
+}
+
+/* Letter panel specific styling */
+.letter-panel .panel-content {
+  text-align: left;
+}
+
+/* Enhanced Horizontal Scrolling Layout */
+.panels-container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+
+/* Desktop: Horizontal layout */
+@media (min-width: 768px) {
+  .panels-container {
+    flex-direction: row;
+  }
+  
+  .panel {
+    flex: 0 0 100vw;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}
+
+/* Mobile: Vertical stacking */
+@media (max-width: 767px) {
+  .panels-container {
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: visible;
+    scroll-snap-type: none;
+    height: auto;
+  }
+  
+  .panel {
+    flex: none;
+    width: 100%;
+    min-height: 100vh;
+    scroll-snap-align: none;
+    scroll-snap-stop: auto;
+    padding: var(--spacing-2xl) var(--spacing-md);
+  }
+  
+  .letter-panel .panel-content {
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+    text-align: center;
+  }
+}
+
+/* Hide scrollbar but keep functionality */
+.panels-container::-webkit-scrollbar {
+  display: none;
+}
+
+.panels-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Enhanced Panel content animations */
+.panel-content {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced animations for Chapter 1 */
+.panel.chapter-1 .chapter-badge {
+  animation: badgeFloat 0.8s ease-out 0.3s both;
+}
+
+.panel.chapter-1 .azdlr-logo {
+  animation: logoFadeIn 1s ease-out 0.8s both;
+}
+
+.panel.chapter-1 .letter-content p {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: paragraphReveal 0.6s ease-out forwards;
+}
+
+.panel.chapter-1 .letter-content p:nth-child(1) { animation-delay: 0.4s; }
+.panel.chapter-1 .letter-content p:nth-child(2) { animation-delay: 0.6s; }
+.panel.chapter-1 .letter-content p:nth-child(3) { animation-delay: 0.8s; }
+.panel.chapter-1 .letter-content p:nth-child(4) { animation-delay: 1.0s; }
+
+@keyframes badgeFloat {
+  0% {
+    opacity: 0;
+    transform: scale(1.05) translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes logoFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+  }
+  100% {
+    opacity: 0.85;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes paragraphReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced stagger animation for multiple panels */
+.panel:nth-child(1) .panel-content { animation-delay: 0.1s; }
+.panel:nth-child(2) .panel-content { animation-delay: 0.2s; }
+.panel:nth-child(3) .panel-content { animation-delay: 0.3s; }
+.panel:nth-child(4) .panel-content { animation-delay: 0.4s; }
+.panel:nth-child(5) .panel-content { animation-delay: 0.5s; }
+.panel:nth-child(6) .panel-content { animation-delay: 0.6s; }
+
+/* Enhanced visual elements for each panel */
+.panel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Panel-specific decorative elements */
+.panel.chapter-1::after {
+  background: radial-gradient(circle at 80% 20%, rgba(254, 247, 237, 0.4) 0%, transparent 50%);
+}
+
+.panel.chapter-2::after {
+  background: radial-gradient(circle at 20% 20%, rgba(239, 246, 255, 0.3) 0%, transparent 50%);
+}
+
+.panel.chapter-3::after {
+  background: radial-gradient(circle at 80% 80%, rgba(254, 242, 242, 0.3) 0%, transparent 50%);
+}
+
+.panel.chapter-4::after {
+  background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.05) 0%, transparent 50%);
+}
+
+.panel.chapter-5::after {
+  background: radial-gradient(circle at 20% 80%, rgba(34, 197, 94, 0.05) 0%, transparent 50%);
+}
+
+/* Enhanced scroll indicators */
+.panel::before {
+  content: '';
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--slate-300), transparent);
+  opacity: 0.5;
+  z-index: 1;
+}
+
+/* Enhanced hover effects for interactive elements */
+.panel:hover .letter-content p {
+  transition: all 0.3s ease;
+}
+
+.panel:hover .letter-content p:hover {
+  transform: translateX(4px);
+}
+
+/* Enhanced mobile responsiveness */
+@media (max-width: 767px) {
+  .panel {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+  
+  .panel-content {
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+    padding-top: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+  }
+  
+  .panel::before {
+    display: none;
+  }
+  
+  .panel::after {
+    opacity: 0.3;
+  }
+}
+
+/* Enhanced focus states for accessibility */
+.panel:focus-within {
+  outline: none;
+}
+
+.panel:focus-within .panel-content {
+  animation: focusPulse 0.6s ease-out;
+}
+
+@keyframes focusPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.01);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Enhanced loading states */
+.panel.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.panel.loading .panel-content {
+  animation: loadingPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes loadingPulse {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+} 
